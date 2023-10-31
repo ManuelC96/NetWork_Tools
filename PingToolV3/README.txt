@@ -1,0 +1,1 @@
+pyinstaller --icon=Ping.ico --onefile --windowed mainV3.py
