@@ -1,4 +1,5 @@
 import docx as dx 
+from docx import Document
 from docx.shared import Mm
 # implement RMA aouto compiler
 # TODO TEMPLATE class
@@ -25,7 +26,8 @@ class Template():
     def title(self, title = str, level = int):
         self.title = title
         self.level = level
-        self.document.add_heading(self.title, self.level)
+        self.document = dx.Document()
+        self.document.add_heading(title, level)
 
 # # create table
     def table(self, rows = None, cols = None):
@@ -35,7 +37,7 @@ class Template():
     
 # populate table 
     def table_content(self, table = table, records= tuple):
-        self.records= recordsS
+        self.records= records
         self.table = table
     
         for a in range(len(self.records)):
